@@ -1,6 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/styles.css';
+
+// Define the weeks data directly for now
+const weeks = [
+    { number: 0, title: "S3tup & 0nb04rd1ng", subtitle: "Environment Configuration - Dev tools mastery", status: "available" },
+    { number: 1, title: "Th3 F1r5t T4g", subtitle: "Single Tag Mastery - Understanding HTML anatomy", status: "loacked"},
+    { number: 2, title: "D0cum3nt 4rch1t3ctur3", subtitle: "Structure Before Style - Valid HTML foundations", status: "locked" },
+    { number: 3, title: "Th3 C4sc4d3 B3g1n5", subtitle: "CSS Separation of Concerns", status: "locked" },
+    { number: 4, title: "F0rm5 & 1nput5", subtitle: "User Interaction Patterns", status: "locked" },
+    { number: 5, title: "Fl3xb0x M45t3ry", subtitle: "One-dimensional Layouts", status: "locked" },
+    { number: 6, title: "Tr1but3 P4g3", subtitle: "First Complete Project", status: "locked" },
+    { number: 7, title: "Gr1d Sy5t3m5", subtitle: "Two-dimensional Thinking", status: "locked" },
+    { number: 8, title: "Pr0duct L4nd1ng", subtitle: "Professional Product Page", status: "locked" },
+    { number: 9, title: "P0rtf0l10 Sy5t3m", subtitle: "Personal Brand Development (2 weeks)", status: "locked" },
+    { number: 11, title: "Sh1p 1t", subtitle: "Launch & Deploy", status: "locked" }
+];
 ---
 
 <BaseLayout title="Home - DESN368">
@@ -12,6 +27,8 @@ import '../styles/styles.css';
                 <p>Most people live on the surface of the web—scrolling, clicking, tapping. But beneath all of that, there's structure. Logic. Craft.</p>
                 
                 <p>In this class, you'll learn to read and write the source code that powers the modern internet. Not with drag-and-drop tools. Not through shortcuts. But with the foundational tools—HTML and CSS—the way it actually works.</p>
+
+                <p>You'll start from nothing. Build from scratch. And by the end, you won't just have a few websites. You'll have a lens—a way of seeing and shaping digital space that most people never access.</p>
 
                 <p><strong>This isn't a bootcamp. This isn't a YouTube tutorial. This is the real thing.</strong></p>
             </section>
@@ -28,6 +45,64 @@ import '../styles/styles.css';
                     I will build with intent."
                 </div>
             </section>
+
+            <!-- Course Structure -->
+            <section class="card">
+                <h2>Course Structure: 11 Weeks of Foundation</h2>
+                <div class="week-list">
+                    {weeks.map((week) => (
+                        <div class="week-item">
+                            <div>
+                                <h3>
+                                    {week.status === "available" ? (
+                                        <a href={`/weeks/week-${week.number}`}>
+                                            Week {week.number}: {week.title}
+                                        </a>
+                                    ) : (
+                                        `Week ${week.number}: ${week.title}`
+                                    )}
+                                </h3>
+                                <p>{week.subtitle}</p>
+                            </div>
+                            <span class={`week-status status-${week.status}`}>
+                                {week.status === "available" && week.assignments 
+                                    ? `${week.assignments} Assignments` 
+                                    : week.status === "available" 
+                                    ? "Available"
+                                    : "Coming Soon"}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <!-- Brick by Brick Method -->
+            <section class="card">
+                <h2>The "Brick by Brick" Method</h2>
+                
+                <h3>Micro-Skills Architecture</h3>
+                <p>Each assignment builds one tiny, specific skill that becomes the foundation for the next. You cannot proceed to Assignment B until you demonstrate mastery of Assignment A through multiple assessment gates.</p>
+                
+                <h3>Four Types of Mastery Gates</h3>
+                <ul>
+                    <li><strong>Technical Gate</strong> - Code validates and works perfectly</li>
+                    <li><strong>Conceptual Gate</strong> - Can explain why it works</li>
+                    <li><strong>Debug Gate</strong> - Can fix broken code</li>
+                    <li><strong>Teaching Gate</strong> - Can help a classmate understand</li>
+                </ul>
+
+                <h3>No Student Left Behind</h3>
+                <p>Multiple learning pathways accommodate different learning styles:</p>
+                <ul>
+                    <li><strong>Visual learners:</strong> Figma integration and visual diagrams</li>
+                    <li><strong>Kinesthetic learners:</strong> Hands-on coding from day one</li>
+                    <li><strong>Analytical learners:</strong> Deep documentation and technical specs</li>
+                    <li><strong>Social learners:</strong> Peer teaching and pair programming</li>
+                </ul>
+
+                <h3>Why This Works</h3>
+                <p>Traditional courses throw everything at you at once. You memorize, you forget. This course builds muscle memory. Each micro-skill becomes automatic before you move on. By Week 11, you won't have to think about syntax—your fingers will know.</p>
+            </section>
         </div>
 
         <aside class="sidebar">
@@ -35,9 +110,56 @@ import '../styles/styles.css';
             <section class="card">
                 <h3>Quick Actions</h3>
                 <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                    <a href="/weeks/week-1" class="btn btn-primary">Start Week 1</a>
+                    <a href="/weeks/week-0" class="btn btn-primary">Start Week 0</a>
                     <a href="/syllabus" class="btn btn-secondary">View Syllabus</a>
+                    <a href="https://github.com/sicxz/desn368-f25" class="btn btn-secondary">GitHub Repo</a>
                 </div>
+            </section>
+
+            <!-- Course Tools -->
+            <section class="card">
+                <h3>Required Tools</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;">
+                        <strong>Text Editor:</strong> VS Code
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                        <strong>Browser:</strong> Chrome DevTools
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                        <strong>Validation:</strong> W3C Validators
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                        <strong>Version Control:</strong> Git & GitHub
+                    </li>
+                    <li style="margin-bottom: 0.5rem;">
+                        <strong>Design:</strong> Figma (optional)
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Philosophy Quote -->
+            <section class="card" style="border-left: 4px solid var(--ewu-red); font-style: italic;">
+                <p>"We're not making pretty pages.<br>We're building digital infrastructure."</p>
+            </section>
+
+            <!-- Resources -->
+            <section class="card">
+                <h3>Resources</h3>
+                <ul style="list-style: none; padding: 0; font-size: 13px;">
+                    <li style="margin-bottom: 8px;">
+                        <a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="https://validator.w3.org/">W3C Validator</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="https://css-tricks.com/">CSS-Tricks</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="https://codepen.io/">CodePen</a>
+                    </li>
+                </ul>
             </section>
         </aside>
     </main>
