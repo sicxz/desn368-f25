@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/styles.css';
+---
+
+<BaseLayout title="Home - DESN368">
+    <main class="course-content two-column">
+        <div class="main-content">
+            <!-- Course Introduction -->
+            <section class="card">
+                <h2>Welcome to the Real Thing</h2>
+                <p>Most people live on the surface of the web—scrolling, clicking, tapping. But beneath all of that, there's structure. Logic. Craft.</p>
+                
+                <p>In this class, you'll learn to read and write the source code that powers the modern internet. Not with drag-and-drop tools. Not through shortcuts. But with the foundational tools—HTML and CSS—the way it actually works.</p>
+
+                <p><strong>This isn't a bootcamp. This isn't a YouTube tutorial. This is the real thing.</strong></p>
+            </section>
+
+            <!-- Student Pledge -->
+            <section class="card">
+                <h2>Student Pledge</h2>
+                <div class="code-block">
+                    "I will not blindly copy and paste.<br>
+                    I will write my own tags.<br>
+                    I will read the source.<br>
+                    I will not fear the browser inspector.<br>
+                    I will know what my code does.<br>
+                    I will build with intent."
+                </div>
+            </section>
+        </div>
+
+        <aside class="sidebar">
+            <!-- Quick Actions -->
+            <section class="card">
+                <h3>Quick Actions</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="/weeks/week-1" class="btn btn-primary">Start Week 1</a>
+                    <a href="/syllabus" class="btn btn-secondary">View Syllabus</a>
+                </div>
+            </section>
+        </aside>
+    </main>
+</BaseLayout>

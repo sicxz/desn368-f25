@@ -1,0 +1,30 @@
+---
+// This is the "frontmatter" - JavaScript runs here
+const { title = "DESN368: Code+Design 1" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <!-- Import your existing CSS -->
+    <link rel="stylesheet" href="/src/styles/styles.css">
+</head>
+<body>
+    <header class="course-header">
+        <h1 class="course-title">DESN368: Code+Design 1</h1>
+        <p class="course-subtitle">Brick by Brick. Tag by Tag. Source-Level Fluency.</p>
+    </header>
+
+    <nav class="course-nav">
+        <div class="nav-breadcrumb">
+            <a href="/">Course Overview</a>
+        </div>
+    </nav>
+
+    <!-- This is where page content goes -->
+    <slot />
+</body>
+</html>
