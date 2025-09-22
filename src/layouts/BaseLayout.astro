@@ -1,5 +1,7 @@
 ---
 // This is the "frontmatter" - JavaScript runs here
+import '../styles/styles.css';
+
 const { title = "DESN368: Code+Design 1" } = Astro.props;
 ---
 
@@ -10,7 +12,7 @@ const { title = "DESN368: Code+Design 1" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <!-- Import your existing CSS -->
-    <link rel="stylesheet" href="/src/styles/styles.css">
+    <!-- CSS is automatcially injected by the import -->
 </head>
 <body>
     <header class="course-header">
